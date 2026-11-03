@@ -1,0 +1,71 @@
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* targets a class */
+.container {
+    /* stops the site from stretching forever */
+    max-width: 900px;
+    background-color: teal;
+
+    /* center the site in the browser */
+    margin: 0 auto;
+    /* when you give margin two values, it means:
+    top-bottom
+    left-right
+    ...so margin:0 auto automatically applies the same margin on either side of the element */
+}
+h1 {
+    font-size: 36px;
+    color: orange;
+    background-color: lime;
+    /* margin is the space around an element, between other elements */
+    margin-bottom: 10px;
+    /* padding is the space inside an element, it pushes content away from the edge */
+    padding: 10px;
+}
+
+/*** mobile styles ***/
+
+/* style the tags inside the nav only */
+nav a {
+    /* make the anchor tags block elements (so they behave like divs) */
+    display: block;
+    background-color: lightblue;
+    border-top:2px solid darkblue;
+    border-bottom: 2px solid darkblue;
+
+    padding:10px;
+    text-align: center;
+
+    /* remove the underline from the link */
+    text-decoration: none;
+}
+
+/* hover for anything with a cursor, active for touchscreens */
+nav a:hover, nav a:active {
+    background-color: greenyellow;
+}
+
+@media screen and (min-width:720px) {
+    /* only apply these styles when the screen is 720px width (minimum) or larger */
+
+    nav a{
+        float: left;
+        width: 25%;
+        /* makes the border and padding not count toward the width and height of the element */
+        box-sizing: border-box;
+
+    }
+    main {
+        /* so it sits under the floated stuff */
+        clear: both
+    }
+}
+
+@media screen and (min-width:900px) {
+    /* these styles only aply at 900px or above */
+    nav a {
+        background-color: turquoise;
+    }
+}
